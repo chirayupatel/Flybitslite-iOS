@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZoneInfoMenuCollectionReusableView" id="U6b-Vx-4bR" customClass="ZoneInfoMenuCollectionReusableView" customModule="Flybits" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="518" height="40"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCG-3z-mvI" userLabel="View - Fav, Share, Dist">
+                    <rect key="frame" x="0.0" y="0.0" width="518" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjL-Dh-Nn1" customClass="ButtonSizableImage" customModule="Flybits" customModuleProvider="target">
+                            <rect key="frame" x="15" y="0.0" width="74" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="cyc-dZ-jvE"/>
+                                <constraint firstAttribute="height" constant="52" id="feb-Ld-tYT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="200" image="ic_favorite_star_outline_w"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="size" keyPath="imageSize">
+                                    <size key="value" width="18" height="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="feb-Ld-tYT"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="buttonTapped:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="BSM-kT-naO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1oa-et-Sd8" customClass="ButtonSizableImage" customModule="Flybits" customModuleProvider="target">
+                            <rect key="frame" x="406" y="0.0" width="97" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="feq-cF-S69"/>
+                                <constraint firstAttribute="height" constant="52" id="kU3-Mx-IG6"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="200 km" image="ic_direction_w"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="size" keyPath="imageSize">
+                                    <size key="value" width="18" height="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="kU3-Mx-IG6"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="buttonTapped:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="tlC-PK-Bjf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2vu-LL-eFr" customClass="ButtonSizableImage" customModule="Flybits" customModuleProvider="target">
+                            <rect key="frame" x="205" y="0.0" width="86" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="OIA-Zd-YHF"/>
+                                <constraint firstAttribute="height" constant="52" id="f9e-7B-noD"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <state key="normal" title="Share" image="ic_share_w"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="size" keyPath="imageSize">
+                                    <size key="value" width="18" height="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="f9e-7B-noD"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="buttonTapped:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="KwA-hH-jDh"/>
+                            </connections>
+                        </button>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aX-Lh-thY" userLabel="Spacer-View">
+                            <rect key="frame" x="291" y="0.0" width="115" height="27"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="27" id="2f7-Y9-jUi"/>
+                            </constraints>
+                        </view>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNq-7a-SVL" userLabel="Spacer-View">
+                            <rect key="frame" x="89" y="0.0" width="116" height="27"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="27" id="qmL-94-JUb"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="1oa-et-Sd8" firstAttribute="centerY" secondItem="TCG-3z-mvI" secondAttribute="centerY" id="5ea-Is-wG6"/>
+                        <constraint firstItem="2vu-LL-eFr" firstAttribute="centerY" secondItem="TCG-3z-mvI" secondAttribute="centerY" id="93e-TK-lYE"/>
+                        <constraint firstItem="2aX-Lh-thY" firstAttribute="top" secondItem="TCG-3z-mvI" secondAttribute="top" id="BTd-mg-ElU"/>
+                        <constraint firstItem="RjL-Dh-Nn1" firstAttribute="centerY" secondItem="TCG-3z-mvI" secondAttribute="centerY" id="Ccy-Oe-qRx"/>
+                        <constraint firstItem="NNq-7a-SVL" firstAttribute="leading" secondItem="RjL-Dh-Nn1" secondAttribute="trailing" id="FRY-u2-52R"/>
+                        <constraint firstItem="1oa-et-Sd8" firstAttribute="leading" secondItem="2aX-Lh-thY" secondAttribute="trailing" id="GGh-vW-LAi"/>
+                        <constraint firstItem="2vu-LL-eFr" firstAttribute="leading" secondItem="NNq-7a-SVL" secondAttribute="trailing" id="Lxm-a7-6Oq"/>
+                        <constraint firstItem="2aX-Lh-thY" firstAttribute="width" secondItem="NNq-7a-SVL" secondAttribute="width" id="SoC-ed-kmI"/>
+                        <constraint firstItem="2aX-Lh-thY" firstAttribute="leading" secondItem="2vu-LL-eFr" secondAttribute="trailing" id="ULJ-5O-U4E"/>
+                        <constraint firstItem="2vu-LL-eFr" firstAttribute="centerX" secondItem="TCG-3z-mvI" secondAttribute="centerX" id="UrI-W9-4nT"/>
+                        <constraint firstAttribute="height" constant="40" id="aeK-uu-i8Z"/>
+                        <constraint firstAttribute="trailing" secondItem="1oa-et-Sd8" secondAttribute="trailing" constant="15" id="eDw-3p-TMh"/>
+                        <constraint firstItem="NNq-7a-SVL" firstAttribute="top" secondItem="TCG-3z-mvI" secondAttribute="top" id="faQ-d6-BZX"/>
+                        <constraint firstItem="RjL-Dh-Nn1" firstAttribute="leading" secondItem="TCG-3z-mvI" secondAttribute="leading" constant="15" id="hjM-cj-3eQ"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="UrI-W9-4nT"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.67385220609999996" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="TCG-3z-mvI" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="Y29-C8-75G"/>
+                <constraint firstAttribute="trailing" secondItem="TCG-3z-mvI" secondAttribute="trailing" id="i2m-6a-8Jc"/>
+                <constraint firstItem="TCG-3z-mvI" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="pWZ-ec-TrE"/>
+            </constraints>
+            <connections>
+                <outlet property="btnDistance" destination="1oa-et-Sd8" id="IfZ-6B-581"/>
+                <outlet property="btnFavourite" destination="RjL-Dh-Nn1" id="MmX-F7-x13"/>
+                <outlet property="btnShare" destination="2vu-LL-eFr" id="1h8-PV-aBv"/>
+            </connections>
+            <point key="canvasLocation" x="620" y="549"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="ic_direction_w" width="48" height="48"/>
+        <image name="ic_favorite_star_outline_w" width="48" height="48"/>
+        <image name="ic_share_w" width="48" height="48"/>
+    </resources>
+</document>

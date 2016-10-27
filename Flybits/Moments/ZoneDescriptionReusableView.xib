@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ZoneDescriptionReusableView" id="U6b-Vx-4bR" customClass="ZoneDescriptionReusableView" customModule="Flybits" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xol-LT-ys3">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="25"/>
+                    <color key="tintColor" red="0.0" green="0.73482340574264526" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <action selector="moreButtonTapped:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="wP4-pz-AUO"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ool-w9-2VM">
+                    <rect key="frame" x="8" y="2" width="304" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.67385220609999996" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xol-LT-ys3" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="AE8-Dl-PhU"/>
+                <constraint firstItem="xol-LT-ys3" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="AXS-b8-P3v"/>
+                <constraint firstItem="ool-w9-2VM" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="2" id="Bfx-62-va9"/>
+                <constraint firstItem="xol-LT-ys3" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="ool-w9-2VM" secondAttribute="bottom" id="Bzb-cz-47z"/>
+                <constraint firstAttribute="trailing" secondItem="ool-w9-2VM" secondAttribute="trailing" constant="8" id="D4H-w2-gmw"/>
+                <constraint firstItem="xol-LT-ys3" firstAttribute="centerX" secondItem="ool-w9-2VM" secondAttribute="centerX" id="ELG-p4-K4v"/>
+                <constraint firstAttribute="bottom" secondItem="xol-LT-ys3" secondAttribute="bottom" id="FR4-Iv-XTF"/>
+                <constraint firstItem="ool-w9-2VM" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="8" id="Oet-46-b18"/>
+                <constraint firstItem="ool-w9-2VM" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leadingMargin" id="UrX-6r-1VF"/>
+                <constraint firstItem="xol-LT-ys3" firstAttribute="top" secondItem="ool-w9-2VM" secondAttribute="bottom" constant="-20" id="dh7-pN-IIc"/>
+                <constraint firstAttribute="bottom" secondItem="ool-w9-2VM" secondAttribute="bottom" constant="31" id="jrl-MA-9Bq"/>
+                <constraint firstAttribute="trailing" secondItem="ool-w9-2VM" secondAttribute="trailing" constant="8" id="rGd-8e-9eb"/>
+                <constraint firstAttribute="bottom" secondItem="ool-w9-2VM" secondAttribute="bottom" constant="2" id="un8-s8-ivx"/>
+                <constraint firstItem="ool-w9-2VM" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="wA5-rP-FVs"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Bzb-cz-47z"/>
+                    <exclude reference="dh7-pN-IIc"/>
+                    <exclude reference="UrX-6r-1VF"/>
+                    <exclude reference="jrl-MA-9Bq"/>
+                    <exclude reference="rGd-8e-9eb"/>
+                    <exclude reference="wA5-rP-FVs"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="btnMore" destination="xol-LT-ys3" id="V4v-d3-SIt"/>
+                <outlet property="descriptionLabel" destination="ool-w9-2VM" id="4KE-x9-23O"/>
+            </connections>
+            <point key="canvasLocation" x="316" y="506"/>
+        </collectionReusableView>
+    </objects>
+</document>

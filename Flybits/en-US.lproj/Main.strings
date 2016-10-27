@@ -1,0 +1,126 @@
+
+/* Class = "UILabel"; text = "SOCIAL"; ObjectID = "0WG-t3-Lz1"; */
+"0WG-t3-Lz1.text" = "SOCIAL";
+
+/* Class = "UILabel"; text = "Discovery"; ObjectID = "0be-Lc-1Nz"; */
+"0be-Lc-1Nz.text" = "Discovery";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "2Ty-7b-6M8"; */
+"2Ty-7b-6M8.normalTitle" = "Save";
+
+/* Class = "UILabel"; text = "50 m"; ObjectID = "3zE-YE-Z7L"; */
+"3zE-YE-Z7L.text" = "50 m";
+
+/* Class = "UIButton"; normalTitle = "Share"; ObjectID = "4iY-FS-Fqq"; */
+"4iY-FS-Fqq.normalTitle" = "Share";
+
+/* Class = "UILabel"; text = "Firstname"; ObjectID = "8D2-xd-6Te"; */
+"8D2-xd-6Te.text" = "Firstname";
+
+/* Class = "UILabel"; text = "name"; ObjectID = "8e0-9z-9we"; */
+"8e0-9z-9we.text" = "name";
+
+/* Class = "UINavigationItem"; title = "Zones"; ObjectID = "AMa-ZP-16y"; */
+"AMa-ZP-16y.title" = "Zones";
+
+/* Class = "UILabel"; text = "Label Label Label Label Label Label Label"; ObjectID = "AR7-7t-wsZ"; */
+"AR7-7t-wsZ.text" = "Label Label Label Label Label Label Label";
+
+/* Class = "UILabel"; text = "Loading"; ObjectID = "B2s-Z3-0Xw"; */
+"B2s-Z3-0Xw.text" = "Loading";
+
+/* Class = "UILabel"; text = "50 m"; ObjectID = "CUS-XK-4cX"; */
+"CUS-XK-4cX.text" = "50 m";
+
+/* Class = "UIButton"; normalTitle = "Share"; ObjectID = "DsW-je-xFe"; */
+"DsW-je-xFe.normalTitle" = "Share";
+
+/* Class = "UILabel"; text = "Logout"; ObjectID = "E7s-Bp-c0X"; */
+"E7s-Bp-c0X.text" = "Logout";
+
+/* Class = "UILabel"; text = "Favourites"; ObjectID = "G9l-aO-Sij"; */
+"G9l-aO-Sij.text" = "Favorites";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "GcP-v9-p6Z"; */
+"GcP-v9-p6Z.text" = "Label";
+
+/* Class = "UILabel"; text = "Label Label Label Label Label Label Label"; ObjectID = "GqL-qO-YYj"; */
+"GqL-qO-YYj.text" = "Label Label Label Label Label Label Label";
+
+/* Class = "UILabel"; text = "X Moments"; ObjectID = "QPd-s6-z34"; */
+"QPd-s6-z34.text" = "X Moments";
+
+/* Class = "UIButton"; normalTitle = "Change Password"; ObjectID = "RBm-dY-lZz"; */
+"RBm-dY-lZz.normalTitle" = "Change Password";
+
+/* Class = "UIButton"; normalTitle = "RESET PASSWORD"; ObjectID = "SWd-QK-0xU"; */
+"SWd-QK-0xU.normalTitle" = "RESET PASSWORD";
+
+/* Class = "UILabel"; text = "Profile Image"; ObjectID = "Tmg-ao-LRS"; */
+"Tmg-ao-LRS.text" = "Profile Image";
+
+/* Class = "UIButton"; normalTitle = "200"; ObjectID = "UYo-AR-KDP"; */
+"UYo-AR-KDP.normalTitle" = "200";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. "; ObjectID = "Wex-Rw-Nsr"; */
+"Wex-Rw-Nsr.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "YI9-fK-LRi"; */
+"YI9-fK-LRi.text" = "Label";
+
+/* Class = "UILabel"; text = "Change Password"; ObjectID = "Yfl-Zg-xf4"; */
+"Yfl-Zg-xf4.text" = "Change Password";
+
+/* Class = "UILabel"; text = "50 m"; ObjectID = "Yzm-Bw-GeW"; */
+"Yzm-Bw-GeW.text" = "50 m";
+
+/* Class = "UILabel"; text = "Harbour Front zone has a new moment  kjgkjgjk jog keg jog jk jhgjhg"; ObjectID = "cTx-Z1-L0Z"; */
+"cTx-Z1-L0Z.text" = "Harbour Front zone has a new moment  kjgkjgjk jog keg jog jk jhgjhg";
+
+/* Class = "UIButton"; normalTitle = "200"; ObjectID = "dmw-H3-kwT"; */
+"dmw-H3-kwT.normalTitle" = "200";
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "eJe-A8-VVU"; */
+"eJe-A8-VVU.text" = "Email";
+
+/* Class = "UILabel"; text = "Version x.x.x"; ObjectID = "eQB-gD-Scb"; */
+"eQB-gD-Scb.text" = "Version x.x.x";
+
+/* Class = "UILabel"; text = "Zone poll interval (sec)"; ObjectID = "eWe-u7-4v7"; */
+"eWe-u7-4v7.text" = "Zone poll interval (sec)";
+
+/* Class = "UILabel"; text = "My Zones"; ObjectID = "fEh-kk-Fkq"; */
+"fEh-kk-Fkq.text" = "My Zones";
+
+/* Class = "UITableViewController"; title = "Account Settings"; ObjectID = "fmO-N7-bE2"; */
+"fmO-N7-bE2.title" = "Account Settings";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gE3-Nx-WuH"; */
+"gE3-Nx-WuH.text" = "Label";
+
+/* Class = "UILabel"; text = "Label "; ObjectID = "gFB-Os-Dka"; */
+"gFB-Os-Dka.text" = "Label ";
+
+/* Class = "UILabel"; text = "50 m"; ObjectID = "hR4-u6-diV"; */
+"hR4-u6-diV.text" = "50 m";
+
+/* Class = "UILabel"; text = "Privacy Policy"; ObjectID = "hfU-hg-97J"; */
+"hfU-hg-97J.text" = "Privacy Policy";
+
+/* Class = "UILabel"; text = "Moment poll interval (sec)"; ObjectID = "k8W-g1-Ycq"; */
+"k8W-g1-Ycq.text" = "Moment poll interval (sec)";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "kJN-9b-1CF"; */
+"kJN-9b-1CF.text" = "About";
+
+/* Class = "UIButton"; normalTitle = "200 km"; ObjectID = "lwd-VT-vsk"; */
+"lwd-VT-vsk.normalTitle" = "200 km";
+
+/* Class = "UILabel"; text = "Zone discovery range"; ObjectID = "pCV-5X-3xN"; */
+"pCV-5X-3xN.text" = "Zone discovery range";
+
+/* Class = "UILabel"; text = "Access permissions of user data"; ObjectID = "sib-LV-Du3"; */
+"sib-LV-Du3.text" = "Access permissions of user data";
+
+/* Class = "UILabel"; text = "Lastname"; ObjectID = "ygb-hf-UQT"; */
+"ygb-hf-UQT.text" = "Lastname";
