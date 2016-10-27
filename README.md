@@ -27,7 +27,6 @@ To test APNs push:
 
 Screenshots:
 
-Menu:
 <img src="https://cloud.githubusercontent.com/assets/17835432/19780758/56ae72b4-9c54-11e6-878d-111a35da4795.png" width="100">
 <img src="https://cloud.githubusercontent.com/assets/17835432/19780759/56b28c0a-9c54-11e6-9f0b-606b5d0ec52c.png" width="100">
 <img src="https://cloud.githubusercontent.com/assets/17835432/19780760/56b436f4-9c54-11e6-81a8-976a392a6e09.png" width="100">
