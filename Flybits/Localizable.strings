@@ -1,0 +1,59 @@
+/* 
+  Localizable.strings
+  Flybits
+
+  Created by Archuthan Vijayaratnam on 11/12/15.
+  Copyright © 2015 Flybits. All rights reserved.
+*/
+
+// GENERAL
+"ERROR_NO_INTERNET_CONNECTION" = "No Internet Connection";
+"ERROR_UNABLE_TO_LOGIN" = "Login failed";
+
+"SIDEMENU_TITLE_FAVOURITES" = "Favorites";
+"SIDEMENU_TITLE_ZONE_DISCOVERY" = "Discovery";
+"SIDEMENU_TITLE_MY_ZONES" = "My Zones";
+"SIDEMENU_TITLE_EXPLORE" = "Explore";
+"SIDEMENU_TITLE_USERS_ZONE" = "Zones";
+
+"SIDEMENU_TITLE_LOGOUT" = "Logout";
+
+//Enum has to have raw values
+//"ZONEFILTER_TITLE_POPULARITY" = "Popular";
+//"ZONEFILTER_TITLE_NEARBY" = "Nearby";
+//"ZONEFILTER_TITLE_NAME" = "A-Z";
+
+"ZONEVIEW_EMPTY_TITLE_DISCOVERY" = "There are no Zones around here";
+"ZONEVIEW_EMPTY_TITLE_FAVOURITES" = "You currently have no zones favorited.";
+"ZONEVIEW_EMPTY_TITLE_MYZONES" = "You have not created any Zones yet";
+"ZONEVIEW_EMPTY_TITLE_EXPLORE" = "No Zones found";
+"ZONEVIEW_EMPTY_TITLE_SEARCH_VIEW" = "No Zones found";
+"ZONEVIEW_ZONE_IS_INACCESSIBLE" = "This Zone is not available";
+
+"ZONEVIEW_PAGING_NO_MORE_ZONES" = "No more Zones";
+"ZONEVIEW_FOOTER_VIEW_EMPTY" = "No Zones";
+"ZONEVIEW_FOOTER_VIEW_LOADING" = "Loading";
+
+"ZONECELL_VIEW_EMPTY_DESCRIPTION" = "No description available";
+
+"LOCATION_SERVICE_FINDING_DEVICE_LOCATION" = "Waiting for location";
+
+"NO_INTERNET_CONNECTION" = "No Internet Connection";
+"UNABLE_TO_LOGIN" = "Login failed";
+
+"UNABLE_TO_FIX_USER_LOCATION" = "Location not available";
+"ALERT_OK" = "OK";
+
+
+// UserOnBoard -- Login, Register
+"USERONBOARD_REGISTERATION_SUCCEEDED" = "Sucessfully Registered";
+"USERONBOARD_REGISTERATION_FAILED" = "Unable to register for Flybits account";
+"USERONBOARD_REGISTERATION_SUCCEEDED_LOGIN_FAILED" = "Registration succeeded, but unable to login";
+
+"USERONBOARD_REGISTRATION_MISSING_FIELD_FIRSTNAME" = "Missing Firstname";
+"USERONBOARD_REGISTRATION_MISSING_FIELD_LASTNAME" = "Missing Lastname";
+"USERONBOARD_REGISTRATION_MISSING_FIELD_EMAIL" = "Missing Email";
+"USERONBOARD_REGISTRATION_MISSING_FIELD_PASSWORD" = "Missing Password";
+
+"USERONBOARD_TOUCH_ID_ALERT_TITLE" = "Enter your credentials";
+"USERONBOARD_TOUCH_ID_ALERT_BODY" = "Unlock to login into Flybits";
