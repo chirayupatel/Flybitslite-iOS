@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         UserDefaults.standard.register(defaults: AppConstants.Configs.UserDefaultDictionary)
         
         // setup flybitssdk
-        Session.sharedInstance.configuration.apiKey = "7CA85BA9-8747-446A-8436-B3C9F75C3DF2"
+        assert(false, "set an api key, and then remove this assert statement")
+        Session.sharedInstance.configuration.apiKey = "<< YOUR_API_KEY >>"
         Session.sharedInstance.configuration.preferredLocales = []
       
         var shouldPerformAdditionalDelegateHandling = true
