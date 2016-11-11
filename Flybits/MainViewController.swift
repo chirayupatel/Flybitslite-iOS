@@ -593,8 +593,10 @@ final class MainViewController: UIViewController, UserOnBoardDelegate, SideMenuV
                 }
             }
             
-            // since this app depends on location, force register a location context data provider
-            let coreloc = CoreLocationDataProvider(asCoreLocationManager: true, withRequiredAuthorization: .authorizedAlways)
+            // since this app depends on location, force register 
+            // a location context data provider
+            let coreloc = CoreLocationDataProvider(asCoreLocationManager: true,
+                                 withRequiredAuthorization: .authorizedAlways)
             
             if #available(iOS 9.0, *) {
                 coreloc.allowsBackgroundLocationUpdates = true
@@ -603,8 +605,7 @@ final class MainViewController: UIViewController, UserOnBoardDelegate, SideMenuV
             coreloc.pollFrequency = Int32(kPollInterval)
             coreloc.uploadFrequency = Int32(kPollInterval)
 
-            
-            ContextManager.sharedManager.addData(for: coreloc)
+            _ = try? ContextManager.sharedManager.register(coreloc)
             ContextManager.sharedManager.startDataPolling()
         } else {
             presentContextSelectionView()

@@ -936,7 +936,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Flybits/Flybits.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UN8438TPVK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -947,8 +947,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.flybits.flybitsv2-inhouse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "59dfdc11-3a33-490d-a017-65443f443cfd";
-				PROVISIONING_PROFILE_SPECIFIER = "com.flybits.flybitsv2-inhouse";
+				PROVISIONING_PROFILE = "43a4c0aa-f70b-48a8-b207-9338786d9407";
+				PROVISIONING_PROFILE_SPECIFIER = "com.flybits.flybitsv2-inhouse-Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "Flybits/Flybits-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
