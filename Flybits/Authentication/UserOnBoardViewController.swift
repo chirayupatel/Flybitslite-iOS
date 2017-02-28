@@ -74,7 +74,6 @@ class UserOnBoardViewController: UIViewController, UITextFieldDelegate {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-        print("deinit \(self)")
     }
 
     override func viewDidLoad() {
@@ -339,13 +338,6 @@ class UserOnBoardViewController: UIViewController, UITextFieldDelegate {
             (x as! UIView).translatesAutoresizingMaskIntoConstraints = false
             allContainerView.addSubview(x as! UIView)
         }
-
-        #if (DEBUG)
-            if AppConstants.IsSimulator {
-                fieldEmail.text = "chuthan20@gmail.com"
-                fieldPassword.text = "archuthan"
-            }
-        #endif
     }
 
     func logoViewTapped(_ sender: UITapGestureRecognizer) {

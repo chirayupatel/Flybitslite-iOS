@@ -138,8 +138,8 @@ open class LocalizedEvent : NSObject, ResponseObjectSerializable {
             return nil
         }
 
-        print(localizedItem)
-        print(representation)
+//        print(localizedItem)
+//        print(representation)
 
         eventDescription      = (localizedItem["description"] as? String ?? "").htmlDecodedString
         eventId               = localizedItem["eventId"] as? Int ?? 0

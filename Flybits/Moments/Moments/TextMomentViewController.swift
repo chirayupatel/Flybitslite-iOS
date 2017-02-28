@@ -71,7 +71,7 @@ open class TextMomentViewController: UIViewController, MomentModule {
                     return
                 }
                 self.loadWebViewWithContent("<p>An error has occured.</p>")
-                print(error)
+                print(error as Any)
             }
         })
     }

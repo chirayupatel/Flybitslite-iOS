@@ -70,10 +70,6 @@ class ProfileViewController: UITableViewController, UITextFieldDelegate, UIImage
 
     var originalNavButtons:(left:[UIBarButtonItem]?, right:[UIBarButtonItem]?)
 
-    deinit {
-        print("DEINIT \(self)")
-    }
-    
     override func viewDidLoad() {
         if let navBar = navigationController?.navigationBar {
             navBar.isTranslucent = false
@@ -360,7 +356,7 @@ class ProfileViewController: UITableViewController, UITextFieldDelegate, UIImage
     }
     
     @IBAction func userAvatarTapped(_ sender: UIButton) {
-        print(sender)
+//        print(sender)
 
         let alert = UIAlertController(title: "Upload avatar:", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
         

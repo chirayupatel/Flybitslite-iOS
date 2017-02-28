@@ -212,7 +212,7 @@ open class GalleryCollectionViewController: UICollectionViewController, MomentMo
             }
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifierLoaderCell, for: indexPath)
-            print(cell.frame)
+//            print(cell.frame)
             let label = cell.viewWithTag(1) as! UILabel
             label.text = "No images available"
             return cell

@@ -213,7 +213,7 @@ final class MainViewController: UIViewController, UserOnBoardDelegate, SideMenuV
             for aTag in hashTagsArray {
                 let query1 = TagQuery(limit: 1, offset: 0)
                 query1.searchValue = aTag
-                TagsRequest.query(query1) { (tags, pagination, error) in
+                let _ = TagsRequest.query(query1) { (tags, pagination, error) in
                     if let tags = tags {
                         semaphoreAtomicAppend.wait()
                         zoneTags.append(contentsOf: tags)
@@ -243,7 +243,7 @@ final class MainViewController: UIViewController, UserOnBoardDelegate, SideMenuV
             zoneQuery.tagIDQuery = BooleanQuery.init(zoneTags.map { $0.identifier }, .and)
             zoneQuery.searchQuery = BooleanQuery("true:isPublished") // zone has to be a published zone
             
-            ZoneRequest.query(zoneQuery) { (zones, pagination, error) in
+            let _ = ZoneRequest.query(zoneQuery) { (zones, pagination, error) in
                 OperationQueue.main.addOperation { [weak self] in
                     var otherInfo: [String: AnyObject] = ["sendBy": "rule" as AnyObject]
                     if let zoneId = zones.first?.identifier {
@@ -577,7 +577,7 @@ final class MainViewController: UIViewController, UserOnBoardDelegate, SideMenuV
                         let registeredProvider = ContextManager.sharedManager.register(provider, priority: .any, pollFrequency: kPollInterval, uploadFrequency: kUploadInterval)
                         // for iBeacon, we gotta do some customization, i.e., running it in the background
                         if provider == .iBeacon {
-                            let tregisteredProvider = registeredProvider as? iBeaconDataProvider
+                            _ = registeredProvider as? iBeaconDataProvider
                             let locMang = CLLocationManager()
                             if #available(iOS 9.0, *) {
                                 locMang.allowsBackgroundLocationUpdates = true
@@ -593,10 +593,8 @@ final class MainViewController: UIViewController, UserOnBoardDelegate, SideMenuV
                 }
             }
             
-            // since this app depends on location, force register 
-            // a location context data provider
-            let coreloc = CoreLocationDataProvider(asCoreLocationManager: true,
-                                 withRequiredAuthorization: .authorizedAlways)
+            // since this app depends on location, force register a location context data provider
+            let coreloc = CoreLocationDataProvider(asCoreLocationManager: true, withRequiredAuthorization: .authorizedAlways)
             
             if #available(iOS 9.0, *) {
                 coreloc.allowsBackgroundLocationUpdates = true

@@ -76,7 +76,6 @@ final class MomentsCollectionViewController: UIViewController {
         }
         oprnImageDownload.cancelAllOperations()
         NotificationCenter.default.removeObserver(self)
-        print("deinit \(self)")
     }
 
     
@@ -285,7 +284,6 @@ final class MomentsCollectionViewController: UIViewController {
             guard let tempSelf = self else { return }
             
             var fetchedMoments: [Moment]?
-            var zoneDetail: Zone?
             var error1: NSError?
             var error2: NSError?
             
@@ -307,7 +305,6 @@ final class MomentsCollectionViewController: UIViewController {
             // download zone info
             tempSelf.downloadZoneInfoAndUpdateView(id, completion: { (zone, error) -> Void in
                 error2 = error
-                zoneDetail = zone
                 sema.signal()
             })
 
@@ -332,7 +329,6 @@ final class MomentsCollectionViewController: UIViewController {
                 }
 
                 query.pager = newPagination!
-//                tempSelf.currentZone = zoneDetail
                 tempSelf.moments = fetchedMoments ?? [Moment]()
                 tempSelf.updateUI()
                 tempSelf.dismissLoadingView()
@@ -458,7 +454,7 @@ final class MomentsCollectionViewController: UIViewController {
 
         if zone.published != currentZone.published {
             if let _ = self.currentlyOpenedMomentModule as? UIViewController {
-                self.navigationController?.popToViewController(self, animated: true)
+                _ = self.navigationController?.popToViewController(self, animated: true)
             }
         }
         if let newName = zone.name.value, let oldName = currentZone.name.value , newName != oldName {
@@ -787,12 +783,10 @@ final class MomentsCollectionViewController: UIViewController {
     
     fileprivate func logConnectToMomentModule(_ module: MomentModule) {
         _ = DeviceRequest.connect(DeviceQuery(type: .zoneMoment, identifier: module.moment.identifier)) { (error) -> Void in
-            print(error)
         }.execute()
     }
     fileprivate func logDisconnectToMomentModule(_ module: MomentModule) {
         _ = DeviceRequest.disconnect(DeviceQuery(type: .zoneMoment, identifier: module.moment.identifier)) { (error) -> Void in
-            print(error)
         }.execute()
     }
 
@@ -972,17 +966,17 @@ extension MomentsCollectionViewController {
 
         switch reason {
         case .inaccessible(let reason):
-            self.displayErrorMessage(reason)
+            _ = self.displayErrorMessage(reason)
         default:
-            self.displayErrorMessage("Zone is unavailable")
+            _ = self.displayErrorMessage("Zone is unavailable")
         }
         
         Delay(1.0) {
             if let _ = self.presentingViewController {
                 self.dismiss(animated: true, completion: nil)
             } else {
-                self.navigationController?.popToViewController(self, animated: true)
-                self.navigationController?.popViewController(animated: true)
+                _ = self.navigationController?.popToViewController(self, animated: true)
+                _ = self.navigationController?.popViewController(animated: true)
             }
             self.removeErrorBanner()
         }

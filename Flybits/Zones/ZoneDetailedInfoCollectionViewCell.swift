@@ -70,8 +70,8 @@ class ZoneDetailedInfoCollectionViewCell: ZoneCollectionViewCell {
 
 extension UserProfile {
     var fullName: String {
-        print(firstname)
-        print(lastname)
+//        print(firstname as Any)
+//        print(lastname as Any)
         let n = "\(firstname ?? "") \(lastname ?? "")"
         return n
     }

@@ -313,7 +313,7 @@ class SideMenuViewController: UIViewController, MenuViewableDelegate {
         // layout vertically where (width == 100% and height >= 100%) of this ViewController's view
         var lastView: UIView?
         for item in items {
-            print(item)
+//            print(item)
             item.menuView.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview(item.menuView)
             

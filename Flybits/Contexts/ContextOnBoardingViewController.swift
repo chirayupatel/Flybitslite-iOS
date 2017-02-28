@@ -183,7 +183,7 @@ class ContextOnBoardingViewController: UITableViewController {
             p.permissionRequester = { (plug) in
                 if case let status = EKEventStore.authorizationStatus(for: EKEntityType.event) , status == .notDetermined {
                     EKEventStore().requestAccess(to: EKEntityType.event, completion: { (allowed, error) in
-                        print(allowed, error)
+                        print(allowed, error as Any)
                         if allowed {
                             plug.permissionSuccess?(plug)
                         }

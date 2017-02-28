@@ -31,10 +31,6 @@ open class WebPageMomentViewController: UIViewController, MomentModule {
         super.init(coder: aDecoder)
     }
 
-    deinit {
-        print("DEINIT \(self)")
-    }
-    
     open override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -133,7 +129,7 @@ open class WebPageMomentViewController: UIViewController, MomentModule {
 
         for item in data!.websites {
             controller.addAction(UIAlertAction(title: item.locale.uppercased(), style: UIAlertActionStyle.default, handler: { [weak self](action) -> Void in
-                print(item.URLString)
+//                print(item.URLString as Any)
                 if let urlString = item.URLString {
                     self?.loadWebView(urlString)
                     self?.localizationButton.title = action.title

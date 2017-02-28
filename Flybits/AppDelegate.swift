@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         assert(false, "set an api key, and then remove this assert statement")
         Session.sharedInstance.configuration.apiKey = "<< YOUR_API_KEY >>"
         Session.sharedInstance.configuration.preferredLocales = []
+        // enable logging
+//        Session.sharedInstance.configuration.setupLogging(0, options: nil)
       
         var shouldPerformAdditionalDelegateHandling = true
        
@@ -166,7 +168,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let title = notification.userInfo?[kLocalNotificationUserInfoKey_Title] as? String
         let body = notification.userInfo?[kLocalNotificationUserInfoKey_Body] as? String
         let otherInfo = notification.userInfo?[kLocalNotificationUserInfoKey_OtherInfo] as? [String: AnyObject]
-        let zoneId = otherInfo?[kLocalNotificationUserInfoKey_OtherInfoZoneID] as? String
+        _ = otherInfo?[kLocalNotificationUserInfoKey_OtherInfoZoneID] as? String
         
         let vc = UIAlertController.alertConroller(title, message: body, setup: { (a) in
             _ = a.addDefaultDismiss(nil)

@@ -36,10 +36,6 @@ class MomentBackgroundHeaderView: UIView {
         }
     }
 
-    deinit {
-        print("deinit \(self)")
-    }
-    
     var points: [CLLocation]? {
         didSet {
 

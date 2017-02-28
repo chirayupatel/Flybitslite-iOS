@@ -147,7 +147,7 @@ public extension UIImage {
         } else {
             newSize = self.size
         }
-        print(newSize)
+//        print(newSize)
         UIGraphicsBeginImageContextWithOptions(newSize, false, scale);
         draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
         let img = UIGraphicsGetImageFromCurrentImageContext();

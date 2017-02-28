@@ -62,7 +62,7 @@ open class UsersMomentCollectionViewController: UICollectionViewController, Mome
             if success {
                 self?.loadData(dimmedLoadingView)
             } else {
-                print(error)
+                print(error as Any)
                 OperationQueue.main.addOperation {
                     let alert = UIAlertController.cancellableAlertConroller("Validation Failed", message: error?.localizedDescription, handler: nil)
                     self?.present(alert, animated: true, completion: nil)

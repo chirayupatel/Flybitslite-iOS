@@ -86,7 +86,7 @@ open class SpeeddialMoment: NSObject, MomentModule {
         }
 
         let tel = "tel://\(country)\(area)\(exchange)\(ext)"
-        print(tel)
+//        print(tel)
         if let url = URL(string: tel) , UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.openURL(url)
         } else {
@@ -161,7 +161,7 @@ open class SpeeddialMoment: NSObject, MomentModule {
         }
 
         fileprivate func readFromDictionary(_ dictionary: NSDictionary) {
-            print(dictionary)
+//            print(dictionary)
             self.items.removeAll()
             for (locale, value) in dictionary as! [String: NSDictionary] {
                 let items = value.value(forKey: "phoneNumbers") as? [[String:AnyObject]]

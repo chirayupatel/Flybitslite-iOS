@@ -63,7 +63,7 @@ class MomentLoadingFooterCollectionViewCell: UICollectionReusableView {
     
     override func apply(_ layoutAttributes: UICollectionViewLayoutAttributes) {
         super.apply(layoutAttributes)
-        print(layoutAttributes)
+//        print(layoutAttributes)
     }
 }
 

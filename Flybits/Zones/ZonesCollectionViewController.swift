@@ -162,7 +162,6 @@ final class ZonesCollectionViewController: UICollectionViewController, CLLocatio
         imageDownloadQueue?.cancelAllOperations()
         networkQueue?.cancelAllOperations()
         NotificationCenter.default.removeObserver(self)
-        print("deinit \(self)")
     }
     
     override func viewDidLoad() {
@@ -830,12 +829,10 @@ final class ZonesCollectionViewController: UICollectionViewController, CLLocatio
     
     fileprivate func logConnectToZone(_ zoneID: String) {
         _ = DeviceRequest.connect(DeviceQuery(type: .zone, identifier: zoneID)) { (error) -> Void in
-            print(error)
         }.execute()
     }
     fileprivate func logDisconnectToZone(_ zoneID: String) {
         _ = DeviceRequest.disconnect(DeviceQuery(type: .zone, identifier: zoneID)) { (error) -> Void in
-            print(error)
         }.execute()
     }
 
@@ -905,7 +902,7 @@ final class ZonesCollectionViewController: UICollectionViewController, CLLocatio
 
             } else {
                 showFilterView(CGPoint.zero)
-                print("Shouldn't come here!!!")
+//                print("Shouldn't come here!!!")
             }
         }
     }
@@ -988,7 +985,7 @@ final class ZonesCollectionViewController: UICollectionViewController, CLLocatio
     }
 
     fileprivate func getZonesForCurrentViewType(_ more:Bool = false, completion:@escaping (_ query:ZonesQueryExpressions, _ zones:[Zone]?, _ paging:Pager?, _ error:NSError?) -> Void) -> FlybitsRequest? {
-        print("\(#function)")
+//        print("\(#function)")
 
         guard gettingZones == false else { print("Already getZone is in progress"); return nil }
         guard let query = self.query else { print("Zone query cannot be nil"); return nil }

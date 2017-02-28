@@ -222,7 +222,7 @@ class FilterView: UIView {
         addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:[ascending(==iconWidth)]-20-[descending(==iconWidth)]-20-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: sortViews))
         
         if let previousView = previousView {
-            print(previousView)
+//            print(previousView)
             let sortViews = ["ascending":ascendingButton,"descending":descendingButton, "previous":previousView]
             addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[previous]-20-[ascending(==iconHeight)]-20-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: sortViews))
             addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[previous]-20-[descending(==iconHeight)]-20-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: metrics, views: sortViews))

@@ -26,7 +26,7 @@ class ProfileThemedLabel: UILabel {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.commonInit()
-        print(text)
+//        print(text as Any)
     }
 
     func commonInit() {
