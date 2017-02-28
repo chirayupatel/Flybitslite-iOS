@@ -603,7 +603,11 @@ final class MainViewController: UIViewController, UserOnBoardDelegate, SideMenuV
             coreloc.pollFrequency = Int32(kPollInterval)
             coreloc.uploadFrequency = Int32(kPollInterval)
 
-            _ = try? ContextManager.sharedManager.register(coreloc)
+            // Create and register ProprietaryDataProvider object to send custom data
+            let proprietaryDataProvider = ProprietaryDataProvider.init()
+            _ = try? ContextManager.sharedManager.register(proprietaryDataProvider)
+
+            ContextManager.sharedManager.addData(for: coreloc)
             ContextManager.sharedManager.startDataPolling()
         } else {
             presentContextSelectionView()

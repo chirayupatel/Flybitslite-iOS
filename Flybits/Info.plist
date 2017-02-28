@@ -32,7 +32,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>45</string>
+	<string>47</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>tel</string>
@@ -48,18 +48,20 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Access allows to check calendar availability</string>
 	<key>NSCameraUsageDescription</key>
-	<string>You can take pictures when uploading your profile pictures.</string>
+	<string>Access allows to take photos for profile picture</string>
 	<key>NSHealthShareUsageDescription</key>
 	<string>Flybits uses your steps and walking/running distance to provide appropriate Zones/Moments</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Flybits uses location to find nearest zones.</string>
+	<string>Flybits uses location to find nearest Zones</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Flybits uses location to find nearest zones.</string>
+	<string>Flybits uses location to find nearest Zones</string>
 	<key>NSMotionUsageDescription</key>
-	<string>Flybits uses steps count to </string>
+	<string>Flybits uses your motion data to provide appropriate Zones/Moments</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>You can upload a profile picture from your photos.</string>
+	<string>Access allows to upload photos for profile picture</string>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
@@ -96,7 +98,6 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
-		<string>gamekit</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

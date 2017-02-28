@@ -11,10 +11,7 @@
 		495850801BE3D0FF009274F5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4958507F1BE3D0FF009274F5 /* Utils.swift */; };
 		495850821BE3E841009274F5 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495850811BE3E841009274F5 /* EventCollectionViewCell.swift */; };
 		495850841BE3FDF3009274F5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495850831BE3FDF3009274F5 /* GradientView.swift */; };
-		7F61170B1DE606D5003E6E31 /* MQTTFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CD83AE1C24BAB200C24651 /* MQTTFramework.framework */; };
-		7F61170C1DE606D5003E6E31 /* MQTTFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F2CD83AE1C24BAB200C24651 /* MQTTFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		7F61170D1DE606D5003E6E31 /* FlybitsSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F226B6751B78F76D0043AB34 /* FlybitsSDK.framework */; };
-		7F61170E1DE606D5003E6E31 /* FlybitsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F226B6751B78F76D0043AB34 /* FlybitsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A6A90C6B1E61DCAC003E5BFA /* ProprietaryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A90C6A1E61DCAC003E5BFA /* ProprietaryDataProvider.swift */; };
 		B24148BD1B8B95A600B82727 /* ButtonSizableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24148BC1B8B95A600B82727 /* ButtonSizableImage.swift */; };
 		B2517FBB1B8F52470005C2CF /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2517FBA1B8F52470005C2CF /* ChangePasswordViewController.swift */; };
 		B256C7E11B99142400DC238B /* FlybitsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B256C7E01B99142400DC238B /* FlybitsExtension.swift */; };
@@ -70,6 +67,7 @@
 		F226B65A1B78F6B90043AB34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F226B6591B78F6B90043AB34 /* Assets.xcassets */; };
 		F226B65D1B78F6B90043AB34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F226B65B1B78F6B90043AB34 /* LaunchScreen.storyboard */; };
 		F226B6681B78F6BA0043AB34 /* FlybitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226B6671B78F6BA0043AB34 /* FlybitsTests.swift */; };
+		F226B6801B78F7AC0043AB34 /* FlybitsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F226B6751B78F76D0043AB34 /* FlybitsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F235CDA21B7A487500FADE75 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235CDA11B7A487500FADE75 /* ForgotPasswordViewController.swift */; };
 		F235CDA41B7A506500FADE75 /* ExtendedNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F235CDA31B7A506500FADE75 /* ExtendedNavigationBar.swift */; };
 		F24B33651BF4EEC300DFABC5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F24B33641BF4EEC300DFABC5 /* Localizable.strings */; };
@@ -83,6 +81,7 @@
 		F27019BA1D3D0C0700BEB015 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F27019B91D3D0C0700BEB015 /* UserProfileViewController.swift */; };
 		F292F3A01B839D84003418DB /* MomentsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F292F39F1B839D84003418DB /* MomentsCollectionViewController.swift */; };
 		F2B5D1871BED5BDE00B4ED77 /* SharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2B5D1861BED5BDE00B4ED77 /* SharedData.swift */; };
+		F2CD83B11C24BB1A00C24651 /* MQTTFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F2CD83AE1C24BAB200C24651 /* MQTTFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F2DAF5ED1C3D654B008B85E0 /* NativeAppMoment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DAF5EC1C3D654B008B85E0 /* NativeAppMoment.swift */; };
 		F2DB6FD61B80FDF2003954F3 /* UserAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2DB6FD51B80FDF2003954F3 /* UserAvatar.swift */; };
 		F2E0CF651CF497E400EDF7CE /* ZoneDetailedInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E0CF641CF497E400EDF7CE /* ZoneDetailedInfoCollectionViewCell.swift */; };
@@ -102,14 +101,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7F61170F1DE606D5003E6E31 /* Embed Frameworks */ = {
+		F226B6831B78F7AC0043AB34 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7F61170C1DE606D5003E6E31 /* MQTTFramework.framework in Embed Frameworks */,
-				7F61170E1DE606D5003E6E31 /* FlybitsSDK.framework in Embed Frameworks */,
+				F226B6801B78F7AC0043AB34 /* FlybitsSDK.framework in Embed Frameworks */,
+				F2CD83B11C24BB1A00C24651 /* MQTTFramework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +120,7 @@
 		4958507F1BE3D0FF009274F5 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		495850811BE3E841009274F5 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		495850831BE3FDF3009274F5 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = CustomViews/GradientView.swift; sourceTree = "<group>"; };
+		A6A90C6A1E61DCAC003E5BFA /* ProprietaryDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProprietaryDataProvider.swift; sourceTree = "<group>"; };
 		B24148BC1B8B95A600B82727 /* ButtonSizableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonSizableImage.swift; path = CustomViews/ButtonSizableImage.swift; sourceTree = "<group>"; };
 		B2517FBA1B8F52470005C2CF /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChangePasswordViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B256C7E01B99142400DC238B /* FlybitsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FlybitsExtension.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -141,7 +141,7 @@
 		B2CCE31E1BD2E9DE00C388EE /* UserListCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		B2CCE3201BD2EED800C388EE /* UserListCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListCollectionViewDelegate.swift; sourceTree = "<group>"; };
 		B2CD70EE1BD6D3D800BE3CE2 /* GenericWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericWebViewController.swift; sourceTree = "<group>"; };
-		B2CD70F21BD6DB7500BE3CE2 /* license_used.html */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 0; lastKnownFileType = text.html; path = license_used.html; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
+		B2CD70F21BD6DB7500BE3CE2 /* license_used.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = license_used.html; sourceTree = "<group>"; };
 		B2CD70FD1BD7DB2900BE3CE2 /* EventMomentModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMomentModels.swift; sourceTree = "<group>"; };
 		B2D34E3A1B9A2E8D005BAE87 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingView.swift; path = CustomViews/LoadingView.swift; sourceTree = "<group>"; };
 		B2F20E2D1BD4049D0043CBBD /* UserListDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserListDetailViewController.swift; sourceTree = "<group>"; };
@@ -213,8 +213,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F61170B1DE606D5003E6E31 /* MQTTFramework.framework in Frameworks */,
-				7F61170D1DE606D5003E6E31 /* FlybitsSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +271,8 @@
 		B2CD70F41BD6DB7800BE3CE2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E8E812091CB321C200D4678E /* Flybits.entitlements */,
+				F226B65E1B78F6B90043AB34 /* Info.plist */,
 				B2CD70F21BD6DB7500BE3CE2 /* license_used.html */,
 				F24B33641BF4EEC300DFABC5 /* Localizable.strings */,
 				F2EE77C41CEA1B9D00082EE2 /* Flybits-Bridging-Header.h */,
@@ -334,6 +334,7 @@
 				E8E461771CB2A5BC00368567 /* ContextOnBoardingViewController.swift */,
 				E8E812061CB3008100D4678E /* ContextPlugin.swift */,
 				F20A32C21CBD2DA8003505D5 /* LiteOAuthConsentViewController.swift */,
+				A6A90C6A1E61DCAC003E5BFA /* ProprietaryDataProvider.swift */,
 			);
 			path = Contexts;
 			sourceTree = "<group>";
@@ -362,8 +363,8 @@
 		F226B6461B78F6B90043AB34 = {
 			isa = PBXGroup;
 			children = (
-				F226B6721B78F76D0043AB34 /* Frameworks */,
 				F226B6511B78F6B90043AB34 /* Flybits */,
+				F226B6721B78F76D0043AB34 /* Frameworks */,
 				F226B6661B78F6BA0043AB34 /* FlybitsTests */,
 				F226B6501B78F6B90043AB34 /* Products */,
 			);
@@ -381,26 +382,24 @@
 		F226B6511B78F6B90043AB34 /* Flybits */ = {
 			isa = PBXGroup;
 			children = (
-				E8E812091CB321C200D4678E /* Flybits.entitlements */,
 				E8E461761CB2A36400368567 /* Contexts */,
-				B2CD70F41BD6DB7800BE3CE2 /* Supporting Files */,
-				B2ECDB061BCED57C00BABA78 /* Utilities */,
-				F292F39E1B839D6F003418DB /* Moments */,
-				F21998541B7D624200E48164 /* Zones */,
-				F27019AC1D3D0AEB00BEB015 /* User */,
-				F253030E1B79268B00DECE51 /* Extensions */,
-				F25303091B78FFF800DECE51 /* Theme */,
 				F25303061B78FF6000DECE51 /* CustomViews */,
+				F253030E1B79268B00DECE51 /* Extensions */,
+				F292F39E1B839D6F003418DB /* Moments */,
+				B2CD70F41BD6DB7800BE3CE2 /* Supporting Files */,
+				F25303091B78FFF800DECE51 /* Theme */,
+				F27019AC1D3D0AEB00BEB015 /* User */,
 				F226B6841B78F9490043AB34 /* User Management */,
-				F226B6561B78F6B90043AB34 /* Main.storyboard */,
-				F226B65B1B78F6B90043AB34 /* LaunchScreen.storyboard */,
-				F226B6591B78F6B90043AB34 /* Assets.xcassets */,
-				F226B65E1B78F6B90043AB34 /* Info.plist */,
-				F226B6521B78F6B90043AB34 /* AppDelegate.swift */,
+				B2ECDB061BCED57C00BABA78 /* Utilities */,
+				F21998541B7D624200E48164 /* Zones */,
 				F25303131B793B3500DECE51 /* AppConstants.swift */,
+				F226B6521B78F6B90043AB34 /* AppDelegate.swift */,
+				B2CD70EE1BD6D3D800BE3CE2 /* GenericWebViewController.swift */,
 				F226B6541B78F6B90043AB34 /* MainViewController.swift */,
 				F218037F1B7D34D8008F5159 /* SideMenuViewController.swift */,
-				B2CD70EE1BD6D3D800BE3CE2 /* GenericWebViewController.swift */,
+				F226B6591B78F6B90043AB34 /* Assets.xcassets */,
+				F226B65B1B78F6B90043AB34 /* LaunchScreen.storyboard */,
+				F226B6561B78F6B90043AB34 /* Main.storyboard */,
 			);
 			path = Flybits;
 			sourceTree = "<group>";
@@ -565,7 +564,7 @@
 				F226B64B1B78F6B90043AB34 /* Sources */,
 				F226B64C1B78F6B90043AB34 /* Frameworks */,
 				F226B64D1B78F6B90043AB34 /* Resources */,
-				7F61170F1DE606D5003E6E31 /* Embed Frameworks */,
+				F226B6831B78F7AC0043AB34 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -601,26 +600,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Flybits;
 				TargetAttributes = {
 					F226B64E1B78F6B90043AB34 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = UN8438TPVK;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
 							com.apple.GameCenter = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.HealthKit = {
 								enabled = 0;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Maps.iOS = {
 								enabled = 0;
@@ -632,6 +631,8 @@
 					};
 					F226B6621B78F6BA0043AB34 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 						TestTargetID = F226B64E1B78F6B90043AB34;
 					};
 				};
@@ -712,6 +713,7 @@
 				F20A32C31CBD2DA8003505D5 /* LiteOAuthConsentViewController.swift in Sources */,
 				B2CCE31D1BD2D50400C388EE /* UserListItemViewCollectionViewCell.swift in Sources */,
 				F235CDA21B7A487500FADE75 /* ForgotPasswordViewController.swift in Sources */,
+				A6A90C6B1E61DCAC003E5BFA /* ProprietaryDataProvider.swift in Sources */,
 				B256C7E11B99142400DC238B /* FlybitsExtension.swift in Sources */,
 				E86923EB1C49594E000E79B9 /* HTMLMomentViewController.swift in Sources */,
 				B2D34E3B1B9A2E8D005BAE87 /* LoadingView.swift in Sources */,
@@ -910,16 +912,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Flybits/Flybits.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = UN8438TPVK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
 				);
 				INFOPLIST_FILE = Flybits/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -947,7 +945,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
-				GCC_PREPROCESSOR_DEFINITIONS = "";
 				INFOPLIST_FILE = Flybits/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -964,10 +961,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FlybitsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Flybits.FlybitsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flybits.app/Flybits";
 			};
 			name = Debug;
@@ -976,10 +975,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FlybitsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Flybits.FlybitsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Flybits.app/Flybits";
 			};
 			name = Release;

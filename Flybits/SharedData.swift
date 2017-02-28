@@ -50,4 +50,17 @@ class AppData: NSObject {
         var momentID: String?
         var userID: String?
     }
+
+    // MARK: Force-Touch & AppShortcuts
+    fileprivate var launchedShortcutItem: AnyObject? // UIApplicationShortcutItem
+
+    @available(iOS 9.0, *)
+    func setLaunchedShortcut(_ item: UIApplicationShortcutItem?) {
+        self.launchedShortcutItem = item
+    }
+    
+    @available(iOS 9.0, *)
+    func getLaunchedShortcut() -> UIApplicationShortcutItem? {
+        return self.launchedShortcutItem as? UIApplicationShortcutItem
+    }
 }
