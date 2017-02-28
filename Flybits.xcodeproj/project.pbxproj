@@ -203,7 +203,6 @@
 		F2E0CF641CF497E400EDF7CE /* ZoneDetailedInfoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneDetailedInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		F2E6880E1C454EBD000D8BA6 /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 		F2EE77C41CEA1B9D00082EE2 /* Flybits-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Flybits-Bridging-Header.h"; sourceTree = "<group>"; };
-		F2EE77C51CEA1B9D00082EE2 /* Int_Flybits-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Int_Flybits-Bridging-Header.h"; sourceTree = "<group>"; };
 		F2FF9FEE1B83C57000B36DD7 /* MomentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MomentCollectionViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F2FFBA101B7BA327009B6C05 /* UserOnBoardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = UserOnBoardViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
@@ -276,7 +275,6 @@
 				B2CD70F21BD6DB7500BE3CE2 /* license_used.html */,
 				F24B33641BF4EEC300DFABC5 /* Localizable.strings */,
 				F2EE77C41CEA1B9D00082EE2 /* Flybits-Bridging-Header.h */,
-				F2EE77C51CEA1B9D00082EE2 /* Int_Flybits-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -382,9 +380,17 @@
 		F226B6511B78F6B90043AB34 /* Flybits */ = {
 			isa = PBXGroup;
 			children = (
+				F25303131B793B3500DECE51 /* AppConstants.swift */,
+				F226B6521B78F6B90043AB34 /* AppDelegate.swift */,
+				B2CD70EE1BD6D3D800BE3CE2 /* GenericWebViewController.swift */,
+				F226B6541B78F6B90043AB34 /* MainViewController.swift */,
+				F218037F1B7D34D8008F5159 /* SideMenuViewController.swift */,
+				F226B6591B78F6B90043AB34 /* Assets.xcassets */,
 				E8E461761CB2A36400368567 /* Contexts */,
 				F25303061B78FF6000DECE51 /* CustomViews */,
 				F253030E1B79268B00DECE51 /* Extensions */,
+				F226B65B1B78F6B90043AB34 /* LaunchScreen.storyboard */,
+				F226B6561B78F6B90043AB34 /* Main.storyboard */,
 				F292F39E1B839D6F003418DB /* Moments */,
 				B2CD70F41BD6DB7800BE3CE2 /* Supporting Files */,
 				F25303091B78FFF800DECE51 /* Theme */,
@@ -392,14 +398,6 @@
 				F226B6841B78F9490043AB34 /* User Management */,
 				B2ECDB061BCED57C00BABA78 /* Utilities */,
 				F21998541B7D624200E48164 /* Zones */,
-				F25303131B793B3500DECE51 /* AppConstants.swift */,
-				F226B6521B78F6B90043AB34 /* AppDelegate.swift */,
-				B2CD70EE1BD6D3D800BE3CE2 /* GenericWebViewController.swift */,
-				F226B6541B78F6B90043AB34 /* MainViewController.swift */,
-				F218037F1B7D34D8008F5159 /* SideMenuViewController.swift */,
-				F226B6591B78F6B90043AB34 /* Assets.xcassets */,
-				F226B65B1B78F6B90043AB34 /* LaunchScreen.storyboard */,
-				F226B6561B78F6B90043AB34 /* Main.storyboard */,
 			);
 			path = Flybits;
 			sourceTree = "<group>";
@@ -922,7 +920,7 @@
 				INFOPLIST_FILE = Flybits/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flybits.flybitsv2-inhouse";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -939,7 +937,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Flybits/Flybits.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = UN8438TPVK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -948,7 +946,7 @@
 				INFOPLIST_FILE = Flybits/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flybits.flybitsv2-inhouse";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.sampleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
