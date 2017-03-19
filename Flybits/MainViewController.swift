@@ -575,9 +575,12 @@ final class MainViewController: UIViewController, UserOnBoardDelegate, SideMenuV
                 if let  enabled = obj["enabled"] , enabled.boolVal {
                     if let prov = obj["provider"], let provider = ContextProvider.init(string: prov) {
                         let registeredProvider = ContextManager.sharedManager.register(provider, priority: .any, pollFrequency: kPollInterval, uploadFrequency: kUploadInterval)
-                        // for iBeacon, we gotta do some customization, i.e., running it in the background
+                        // for iBeacon, poll for new beacons and allow background location updates
                         if provider == .iBeacon {
-                            _ = registeredProvider as? iBeaconDataProvider
+                            let prov = registeredProvider as? iBeaconDataProvider
+                            prov?.beaconPollFrequency = 60
+                            prov?.startBeaconQuery()
+
                             let locMang = CLLocationManager()
                             if #available(iOS 9.0, *) {
                                 locMang.allowsBackgroundLocationUpdates = true
