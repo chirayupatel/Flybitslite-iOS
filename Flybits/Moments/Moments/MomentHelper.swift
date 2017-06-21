@@ -45,6 +45,10 @@ class LiteMomentManager : MomentManager {
         _ = registerModule("com.flybits.moments.nativeapp") { _, _, _ in
             return NativeAppMoment()
         }
+        _ = registerModule("com.flybits.moments.calendar") { _, _, _ in
+            return LiteMomentManager.moduleForStoryboardID("mm_calendar_event")
+        }
+
         unregisteredModuleHandler = { (manager: MomentManager, packageName: String, moment: Moment) -> MomentModule? in
             if moment.launchURL.lowercased().contains("/locationbit/") {
                 return LiteMomentManager.moduleForStoryboardID("mm_location")

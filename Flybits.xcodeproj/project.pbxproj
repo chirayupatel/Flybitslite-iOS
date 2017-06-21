@@ -11,6 +11,13 @@
 		495850801BE3D0FF009274F5 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4958507F1BE3D0FF009274F5 /* Utils.swift */; };
 		495850821BE3E841009274F5 /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495850811BE3E841009274F5 /* EventCollectionViewCell.swift */; };
 		495850841BE3FDF3009274F5 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495850831BE3FDF3009274F5 /* GradientView.swift */; };
+		A62918FF1EFB286400E32676 /* CalendarEventMomentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62918F71EFB286400E32676 /* CalendarEventMomentDetailViewController.swift */; };
+		A62919001EFB286400E32676 /* CalendarEventMomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62918F81EFB286400E32676 /* CalendarEventMomentViewController.swift */; };
+		A62919011EFB286400E32676 /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62918FA1EFB286400E32676 /* CalendarEvent.swift */; };
+		A62919021EFB286400E32676 /* CalendarEventConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62918FB1EFB286400E32676 /* CalendarEventConstants.swift */; };
+		A62919031EFB286400E32676 /* CalendarEventLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62918FC1EFB286400E32676 /* CalendarEventLocation.swift */; };
+		A62919041EFB286400E32676 /* CalendarEventUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62918FD1EFB286400E32676 /* CalendarEventUser.swift */; };
+		A62919051EFB286400E32676 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62918FE1EFB286400E32676 /* Protocols.swift */; };
 		A6A90C6B1E61DCAC003E5BFA /* ProprietaryDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A90C6A1E61DCAC003E5BFA /* ProprietaryDataProvider.swift */; };
 		B24148BD1B8B95A600B82727 /* ButtonSizableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24148BC1B8B95A600B82727 /* ButtonSizableImage.swift */; };
 		B2517FBB1B8F52470005C2CF /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2517FBA1B8F52470005C2CF /* ChangePasswordViewController.swift */; };
@@ -120,6 +127,13 @@
 		4958507F1BE3D0FF009274F5 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		495850811BE3E841009274F5 /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		495850831BE3FDF3009274F5 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradientView.swift; path = CustomViews/GradientView.swift; sourceTree = "<group>"; };
+		A62918F71EFB286400E32676 /* CalendarEventMomentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventMomentDetailViewController.swift; sourceTree = "<group>"; };
+		A62918F81EFB286400E32676 /* CalendarEventMomentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventMomentViewController.swift; sourceTree = "<group>"; };
+		A62918FA1EFB286400E32676 /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
+		A62918FB1EFB286400E32676 /* CalendarEventConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventConstants.swift; sourceTree = "<group>"; };
+		A62918FC1EFB286400E32676 /* CalendarEventLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventLocation.swift; sourceTree = "<group>"; };
+		A62918FD1EFB286400E32676 /* CalendarEventUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventUser.swift; sourceTree = "<group>"; };
+		A62918FE1EFB286400E32676 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		A6A90C6A1E61DCAC003E5BFA /* ProprietaryDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProprietaryDataProvider.swift; sourceTree = "<group>"; };
 		B24148BC1B8B95A600B82727 /* ButtonSizableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonSizableImage.swift; path = CustomViews/ButtonSizableImage.swift; sourceTree = "<group>"; };
 		B2517FBA1B8F52470005C2CF /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ChangePasswordViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -225,6 +239,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A62918F61EFB286400E32676 /* NewCalendarEvent */ = {
+			isa = PBXGroup;
+			children = (
+				A62918F71EFB286400E32676 /* CalendarEventMomentDetailViewController.swift */,
+				A62918F81EFB286400E32676 /* CalendarEventMomentViewController.swift */,
+				A62918F91EFB286400E32676 /* Model */,
+				A62918FE1EFB286400E32676 /* Protocols.swift */,
+			);
+			path = NewCalendarEvent;
+			sourceTree = "<group>";
+		};
+		A62918F91EFB286400E32676 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A62918FA1EFB286400E32676 /* CalendarEvent.swift */,
+				A62918FB1EFB286400E32676 /* CalendarEventConstants.swift */,
+				A62918FC1EFB286400E32676 /* CalendarEventLocation.swift */,
+				A62918FD1EFB286400E32676 /* CalendarEventUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B27121481B8BA4DE00DE1A32 /* ShareItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +279,7 @@
 				F260242F1DC0F88300F0B57E /* Twitter */,
 				F260242E1DC0F87900F0B57E /* Native */,
 				E8F686091C738703009CD9D7 /* ImageGallery */,
+				A62918F61EFB286400E32676 /* NewCalendarEvent */,
 				B2CD70FC1BD7DAED00BE3CE2 /* Events */,
 				B2F20E331BD48EB90043CBBD /* Youtube */,
 				B2CCE3191BD2D3C400C388EE /* Users */,
@@ -695,11 +732,13 @@
 				F27019BA1D3D0C0700BEB015 /* UserProfileViewController.swift in Sources */,
 				E84A8A921CA1C5DE008C0A32 /* BarButtonItem.swift in Sources */,
 				B24148BD1B8B95A600B82727 /* ButtonSizableImage.swift in Sources */,
+				A62919011EFB286400E32676 /* CalendarEvent.swift in Sources */,
 				E8E461781CB2A5BC00368567 /* ContextOnBoardingViewController.swift in Sources */,
 				F25303121B793A0000DECE51 /* ThemedButton.swift in Sources */,
 				B2F20E2E1BD4049D0043CBBD /* UserListDetailViewController.swift in Sources */,
 				491A73F61BE3A5E900C73F7E /* EventMomentViewController.swift in Sources */,
 				B271FC7F1BA1D34900611ECA /* WebPageMomentViewController.swift in Sources */,
+				A62919041EFB286400E32676 /* CalendarEventUser.swift in Sources */,
 				B2ADE1AD1B948DB1000BE520 /* MomentZoneInfoHeaderView.swift in Sources */,
 				B2F328D41B860E420058651D /* FilterView.swift in Sources */,
 				F21998561B7D625B00E48164 /* ZonesCollectionViewController.swift in Sources */,
@@ -715,6 +754,7 @@
 				B256C7E11B99142400DC238B /* FlybitsExtension.swift in Sources */,
 				E86923EB1C49594E000E79B9 /* HTMLMomentViewController.swift in Sources */,
 				B2D34E3B1B9A2E8D005BAE87 /* LoadingView.swift in Sources */,
+				A62919031EFB286400E32676 /* CalendarEventLocation.swift in Sources */,
 				B2CCE3211BD2EED800C388EE /* UserListCollectionViewDelegate.swift in Sources */,
 				495850841BE3FDF3009274F5 /* GradientView.swift in Sources */,
 				F25303081B78FF7E00DECE51 /* LineSeparatorView.swift in Sources */,
@@ -723,11 +763,13 @@
 				E82DFFB21C90E05500690DE3 /* ZoneInfoMenuCollectionReusableView.swift in Sources */,
 				B2517FBB1B8F52470005C2CF /* ChangePasswordViewController.swift in Sources */,
 				495850821BE3E841009274F5 /* EventCollectionViewCell.swift in Sources */,
+				A62918FF1EFB286400E32676 /* CalendarEventMomentDetailViewController.swift in Sources */,
 				495850801BE3D0FF009274F5 /* Utils.swift in Sources */,
 				B2CCE31F1BD2E9DE00C388EE /* UserListCollectionViewFlowLayout.swift in Sources */,
 				F21803801B7D34D8008F5159 /* SideMenuViewController.swift in Sources */,
 				F235CDA41B7A506500FADE75 /* ExtendedNavigationBar.swift in Sources */,
 				F2DB6FD61B80FDF2003954F3 /* UserAvatar.swift in Sources */,
+				A62919051EFB286400E32676 /* Protocols.swift in Sources */,
 				F2E0CF651CF497E400EDF7CE /* ZoneDetailedInfoCollectionViewCell.swift in Sources */,
 				E82DFFB01C90E05500690DE3 /* ZoneDescriptionReusableView.swift in Sources */,
 				F218037C1B7CF8E2008F5159 /* ProfileThemedLabel.swift in Sources */,
@@ -745,6 +787,7 @@
 				F226B6531B78F6B90043AB34 /* AppDelegate.swift in Sources */,
 				B27104601BA238BC00550FD6 /* SpeeddialMoment.swift in Sources */,
 				B27713BF1BBCBFBF00F2C0CA /* GalleryCollectionViewController.swift in Sources */,
+				A62919021EFB286400E32676 /* CalendarEventConstants.swift in Sources */,
 				B28796451B95E7F7003CE31D /* MomentBackgroundHeaderView.swift in Sources */,
 				F24B33671BF50D1000DFABC5 /* ImagedEmptyView.swift in Sources */,
 				B2CD70FE1BD7DB2900BE3CE2 /* EventMomentModels.swift in Sources */,
@@ -752,6 +795,7 @@
 				F21998581B7D84CD00E48164 /* ZoneCollectionViewCell.swift in Sources */,
 				F253030D1B791F6600DECE51 /* SeparatedTextfield.swift in Sources */,
 				B2CD70EF1BD6D3D800BE3CE2 /* GenericWebViewController.swift in Sources */,
+				A62919001EFB286400E32676 /* CalendarEventMomentViewController.swift in Sources */,
 				E80E19C71C5C329900FD5D12 /* Reachability.swift in Sources */,
 				B2CCE3141BD2AB1100C388EE /* TextMomentViewController.swift in Sources */,
 			);
