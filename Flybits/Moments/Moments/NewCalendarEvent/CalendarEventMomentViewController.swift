@@ -1,9 +1,13 @@
 //
-//  CalendarEventMomentViewController.swift
-//  Flybits
+// CalendarEventMomentViewController.swift
+// Copyright (c) :YEAR: Flybits (http://flybits.com)
 //
-//  Created by Alex on 5/18/17.
-//  Copyright © 2017 Flybits. All rights reserved.
+// Permission to use this codebase and all related and dependent interfaces
+// are granted as bound by the licensing agreement between Flybits and
+// :COMPANY_NAME: effective :EFFECTIVE_DATE:.
+//
+// Flybits Framework version :VERSION:
+// Built: :BUILD_DATE:
 //
 
 import UIKit
@@ -59,9 +63,6 @@ class CalendarEventMomentViewController: UIViewController, UICollectionViewDataS
             OperationQueue.main.addOperation {
                 if let authorization = authorization {
                     self.jwtToken = authorization.payload
-                    DispatchQueue.main.async {
-                        dimmedLoadingView.removeFromSuperview()
-                    }
                     self.loadData(dimmedLoadingView)
                 } else {
                     let alert = UIAlertController.cancellableAlertConroller("Validation Failed", message: error?.localizedDescription ?? "Unable to validate this moment", handler: nil)
@@ -70,52 +71,73 @@ class CalendarEventMomentViewController: UIViewController, UICollectionViewDataS
                 }
             }
         }.execute()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(addUpdateReadDeleteEventAndUpdateInviteeStatusForEvent))
+        navigationController?.navigationBar.addGestureRecognizer(tap)
     }
     
-    func createUser() -> CalendarEventUser {
-        var eventUserDictionary: [String: AnyObject] = [:]
-        eventUserDictionary["firstName"] = "Alex" as AnyObject
-        eventUserDictionary["lastName"] = "Smith" as AnyObject
-        eventUserDictionary["email"] = "not_a_real_email_address@flybits.com" as AnyObject
-        eventUserDictionary["phoneNumber"] = "(555) 555-5555" as AnyObject
-        eventUserDictionary["status"] = "accepted" as AnyObject
-        let eventUser = CalendarEventUser(response: HTTPURLResponse.init(), representation: eventUserDictionary as AnyObject)!
-        return eventUser
+    func createOwner() -> CalendarEventUser {
+        let user = CalendarEventUser()
+        user.firstName = "Alpha"
+        user.lastName = "Beta"
+        user.email = "alpha@flybits.com"
+        user.phoneNumber = "(555) 555-5555"
+        user.status = .accepted
+        return user
+    }
+    
+    func createInvitee1() -> CalendarEventUser {
+        let user = CalendarEventUser()
+        user.firstName = "Gamma"
+        user.lastName = "Delta"
+        user.email = "gamma@flybits.com"
+        user.phoneNumber = "(555) 555-5555"
+        user.status = .accepted
+        return user
+    }
+    
+    func createInvitee2() -> CalendarEventUser {
+        let user = CalendarEventUser()
+        user.firstName = "Sigma"
+        user.lastName = "Epsilon"
+        user.email = "sigma@flybits.com"
+        user.phoneNumber = "(555) 555-5555"
+        user.status = .undecided
+        return user
     }
     
     func createLocation() -> CalendarEventLocation {
-        var eventLocation: [String: AnyObject] = [:]
-        eventLocation["lat"] = 100 as AnyObject
-        eventLocation["lng"] = 200 as AnyObject
-        eventLocation["localizations"] = ["en": ["name": "My house", "description": "It's a bungalow"]] as NSDictionary
-        return CalendarEventLocation(response: HTTPURLResponse.init(), representation: eventLocation as AnyObject)!
+        let location = CalendarEventLocation()
+        location.lat = 100
+        location.lng = 200
+        let localizations = ["en": ["name": "My house", "description": "It's a bungalow"]] as NSDictionary
+        location.name = LocalizedObject<String>(key: "name", localization: localizations, defaultLocale: nil, decodeHTML: false)
+        location.locationDescription = LocalizedObject<String>(key: "description", localization: localizations, defaultLocale: nil, decodeHTML: false)
+        return location
     }
     
-    func addupdateReadDeleteEvent() {
+    func addUpdateReadDeleteEventAndUpdateInviteeStatusForEvent() {
         guard let jwtToken = jwtToken else {
             print("Error: You must authorize and validate before calling the CalendarEvent APIs")
             return
         }
         
-        var representation: [String: AnyObject] = [:]
-        representation["startTime"] = Date().timeIntervalSince1970 as AnyObject
-        representation["endTime"] = Date().timeIntervalSince1970 + 300 as AnyObject
-        let localizationsDict1 = ["en": ["title": "Birthday Party!", "subtitle": "No gifts", "description": "Come hang and swim in the pool"]] as NSDictionary
-        representation["localizations"] = localizationsDict1
-        representation["isAllDay"] = true as AnyObject
-        representation["colour"] = "#0066EE" as AnyObject
-        representation["eventType"] = CalendarEventType.publicEvent as AnyObject
+        let event = CalendarEvent()
+        event.startTime = Date().timeIntervalSince1970
+        event.endTime = Date().timeIntervalSince1970 + 300
+        let localizationsDict = ["en": ["title": "Birthday Party!", "subtitle": "No gifts", "description": "Come hang and swim in the pool"]] as NSDictionary
+        event.title = LocalizedObject<String>(key: "title", localization: localizationsDict, defaultLocale: nil, decodeHTML: false)
+        event.subtitle = LocalizedObject<String>(key: "subtitle", localization: localizationsDict, defaultLocale: nil, decodeHTML: false)
+        event.eventDescription = LocalizedObject<String>(key: "description", localization: localizationsDict, defaultLocale: nil, decodeHTML: false)
+        event.isAllDay = true
+        event.colour = "#0066EE"
+        event.eventType = CalendarEventType.publicEvent
         
-        let eventUser = try! createUser().toDictionary() as AnyObject
+        event.owner = createOwner()
+        event.invitees = [createInvitee1(), createInvitee2()]
+        event.location = createLocation()
         
-        representation["owner"] = eventUser
-        representation["invitees"] = [eventUser] as AnyObject
-        
-        let eventLocation = try! createLocation().toDictionary() as AnyObject
-        representation["location"] = try! CalendarEventLocation(response: HTTPURLResponse(), representation: eventLocation)!.toDictionary() as AnyObject
-        
-        let event = CalendarEvent(response: HTTPURLResponse.init(), representation: representation as AnyObject)
-        _ = CalendarEventMomentRequest.addEvent(moment: self.moment!, jwtToken: jwtToken, event: event!) { (calendarEvent1, error1) in
+        _ = CalendarEventMomentRequest.addEvent(moment: self.moment!, jwtToken: jwtToken, event: event) { (calendarEvent1, error1) in
             guard let calendarEvent1 = calendarEvent1, error1 == nil else {
                 print(error1!.localizedDescription)
                 return
@@ -130,11 +152,17 @@ class CalendarEventMomentViewController: UIViewController, UICollectionViewDataS
                         print(error3!.localizedDescription)
                         return
                     }
-                    _ = CalendarEventMomentRequest.deleteEvent(moment: self.moment!, jwtToken: jwtToken, eventId: calendarEvent3.identifier!) { (error4) in
+                    _ = CalendarEventMomentRequest.updateInviteeStatusForEvent(moment: self.moment!, jwtToken: jwtToken, event: calendarEvent3, status: .declinded, inviteeEmail: "alex.smith@flybits.com") { (calendarEvent4, error4) in
                         guard error4 == nil else {
                             print(error4!.localizedDescription)
                             return
                         }
+                        _ = CalendarEventMomentRequest.deleteEvent(moment: self.moment!, jwtToken: jwtToken, eventId: calendarEvent3.identifier!) { (error5) in
+                            guard error5 == nil else {
+                                print(error5!.localizedDescription)
+                                return
+                            }
+                        }.execute()
                     }.execute()
                 }.execute()
             }.execute()
@@ -146,7 +174,7 @@ class CalendarEventMomentViewController: UIViewController, UICollectionViewDataS
             print("Error: You must authorize and validate before calling the CalendarEvent APIs")
             return
         }
-        let user = createUser()
+        let user = createOwner()
         _ = CalendarEventAttendeeMomentRequest.getAttendees(moment: self.moment!, jwtToken: jwtToken, email: user.email, pager: nil, sortBy: nil, order: nil) { (calendarEventUsers, pager, error) in
             
             guard let calendarEventUsers = calendarEventUsers, error == nil else {
@@ -160,7 +188,7 @@ class CalendarEventMomentViewController: UIViewController, UICollectionViewDataS
                     return
                 }
                 print(calendarEventUser)
-                let calendarQuery = CalendarEventQuery(pager: nil, sortBy: nil, order: nil, type: CalendarEventType.publicEvent, startTime: nil, endTime: nil)
+                let calendarQuery = CalendarEventQuery(pager: nil, sortBy: nil, order: nil, type: nil, startTime: nil, endTime: nil)
                 _ = CalendarEventMomentRequest.getEvents(moment: self.moment!, jwtToken: jwtToken, query: calendarQuery) { (calendarEvents, pager, error) in
                     guard let calendarEvents = calendarEvents, error == nil else {
                         print(error!.localizedDescription)
@@ -182,17 +210,18 @@ class CalendarEventMomentViewController: UIViewController, UICollectionViewDataS
         }.execute()
     }
     
-    /*
     func addUpdateReadDeleteLocation() {
         guard let jwtToken = jwtToken else {
             print("Error: You must authorize and validate before calling the CalendarEvent APIs")
             return
         }
-        _ = CalendarEventLocationMomentRequest.getLocations(moment: self.moment!, jwtToken: jwtToken, name: nil, locale: nil, pager: nil, orderBy: nil, sortOrder: nil) { (calendarEventLocations, pager, error) in
+        let pager = Pager(limit: 10, offset: 0, countRecords: nil)
+        _ = CalendarEventLocationMomentRequest.getLocations(moment: self.moment!, jwtToken: jwtToken, name: nil, locale: nil, pager: pager, orderBy: nil, sortOrder: nil) { (calendarEventLocations, pager, error) in
             guard let calendarEventLocations = calendarEventLocations, error == nil else {
                 print(error!.localizedDescription)
                 return
             }
+            print(calendarEventLocations)
             let calendarEventLocation = self.createLocation()
             _ = CalendarEventLocationMomentRequest.addLocation(moment: self.moment!, jwtToken: jwtToken, location: calendarEventLocation) { (calendarEventLocation, error) in
                 guard let calendarEventLocation = calendarEventLocation, error == nil else {
@@ -211,7 +240,7 @@ class CalendarEventMomentViewController: UIViewController, UICollectionViewDataS
                         }
                         _ = CalendarEventLocationMomentRequest.deleteLocation(moment: self.moment!, jwtToken: jwtToken, locationId: calendarEventLocation.identifier!) { (error) in
                             guard error == nil else {
-                                print(error!.localizedDescription)
+                                print(error!.localizedDescription) // returns 405 - not allowed
                                 return
                             }
                         }.execute()
@@ -220,7 +249,6 @@ class CalendarEventMomentViewController: UIViewController, UICollectionViewDataS
             }.execute()
         }.execute()
     }
-    */
     
     override func viewDidLayoutSubviews() {
         if let flowLayout = self.collectionView!.collectionViewLayout as? UICollectionViewFlowLayout {

@@ -1,9 +1,13 @@
 //
-//  CalendarEventLocation.swift
-//  Flybits
+// CalendarEventLocation.swift
+// Copyright (c) :YEAR: Flybits (http://flybits.com)
 //
-//  Created by Alex on 5/18/17.
-//  Copyright © 2017 Flybits. All rights reserved.
+// Permission to use this codebase and all related and dependent interfaces
+// are granted as bound by the licensing agreement between Flybits and
+// :COMPANY_NAME: effective :EFFECTIVE_DATE:.
+//
+// Flybits Framework version :VERSION:
+// Built: :BUILD_DATE:
 //
 
 import Foundation
@@ -44,7 +48,7 @@ enum CalendarEventLocationMomentRequest: Requestable {
             }
             
             if params.count > 0 {
-                joinedParams = "/?\(params.joined(separator: "&"))"
+                joinedParams = "?\(params.joined(separator: "&"))"
             }
             
             return "\(moment.launchURL)\(CalendarMoment.APIConstants.locationsEndpoint)\(joinedParams)"
@@ -54,6 +58,15 @@ enum CalendarEventLocationMomentRequest: Requestable {
             return "\(moment.launchURL)\(CalendarMoment.APIConstants.locationsEndpoint)/\(location.identifier!)"
         case .deleteLocation(let moment, _, let locationId, _):
             return "\(moment.launchURL)\(CalendarMoment.APIConstants.locationsEndpoint)/\(locationId)"
+        }
+    }
+    
+    var parameters: [String: AnyObject]? {
+        switch self {
+        case .addLocation(_, _, let location, _), .updateLocation(_, _, let location, _):
+            return try! location.toDictionary()
+        default:
+            return nil
         }
     }
     
@@ -149,8 +162,12 @@ class CalendarEventLocation: NSObject, ResponseObjectSerializable, DictionaryCon
     var province: LocalizedObject<String>?
     var country: LocalizedObject<String>?
     
-    required init?(response: HTTPURLResponse, representation: AnyObject) {
+    override required init() {
         super.init()
+    }
+    
+    convenience required init?(response: HTTPURLResponse, representation: AnyObject) {
+        self.init()
         
         guard let representation = representation as? [String: Any] else {
             return nil

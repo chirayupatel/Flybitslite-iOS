@@ -1,9 +1,13 @@
 //
-//  CalendarEventUser.swift
-//  Flybits
+// CalendarEventUser.swift
+// Copyright (c) :YEAR: Flybits (http://flybits.com)
 //
-//  Created by Alex on 5/18/17.
-//  Copyright © 2017 Flybits. All rights reserved.
+// Permission to use this codebase and all related and dependent interfaces
+// are granted as bound by the licensing agreement between Flybits and
+// :COMPANY_NAME: effective :EFFECTIVE_DATE:.
+//
+// Flybits Framework version :VERSION:
+// Built: :BUILD_DATE:
 //
 
 import Foundation
@@ -49,7 +53,7 @@ enum CalendarEventAttendeeMomentRequest: Requestable {
             }
             return "\(moment.launchURL)\(CalendarMoment.APIConstants.calendarAttendeesEndpoint)\(joinedParams)"
         case .getAttendeesInvitedTo(let moment, _, let eventId, _, _, _, _):
-            return "\(moment.launchURL)\(CalendarMoment.APIConstants.calendarAttendeesEndpoint)/\(eventId)"
+            return "\(moment.launchURL)\(CalendarMoment.APIConstants.eventsEndpoint)/\(eventId)\(CalendarMoment.APIConstants.calendarAttendeesEndpoint)"
         }
     }
     
@@ -82,11 +86,7 @@ enum CalendarEventAttendeeMomentRequest: Requestable {
             return FlybitsRequest(urlRequest).response { (request, response, eventData: CalendarEventUser?, error) -> Void in
                 completion(eventData, error)
             }
-        case .getAttendees(_, _, _, _, _, _, let completion):
-            return FlybitsRequest(urlRequest).responseListPaged { (request, response, eventData: [CalendarEventUser]?, pager, error) -> Void in
-                completion(eventData, pager, error)
-            }
-        case .getAttendeesInvitedTo(_, _, _, _, _, _, let completion):
+        case .getAttendees(_, _, _, _, _, _, let completion), .getAttendeesInvitedTo(_, _, _, _, _, _, let completion):
             return FlybitsRequest(urlRequest).responseListPaged { (request, response, eventData: [CalendarEventUser]?, pager, error) -> Void in
                 completion(eventData, pager, error)
             }
@@ -120,8 +120,12 @@ class CalendarEventUser: NSObject, ResponseObjectSerializable, DictionaryConvert
     var status: CalendarEventUserStatus? = .undecided
     var iconUrl: URL?
     
-    required init?(response: HTTPURLResponse, representation: AnyObject) {
+    override required init() {
         super.init()
+    }
+    
+    convenience required init?(response: HTTPURLResponse, representation: AnyObject) {
+        self.init()
         
         guard let representation = representation as? [String: Any] else {
             return nil

@@ -1,9 +1,13 @@
 //
-//  CalendarEvent.swift
-//  Flybits
+// CalendarEvent.swift
+// Copyright (c) :YEAR: Flybits (http://flybits.com)
 //
-//  Created by Alex on 5/18/17.
-//  Copyright © 2017 Flybits. All rights reserved.
+// Permission to use this codebase and all related and dependent interfaces
+// are granted as bound by the licensing agreement between Flybits and
+// :COMPANY_NAME: effective :EFFECTIVE_DATE:.
+//
+// Flybits Framework version :VERSION:
+// Built: :BUILD_DATE:
 //
 
 import Foundation
@@ -29,6 +33,17 @@ enum CalendarEventType: String {
     }
 }
 
+/**
+ Builder object to simplify getting Events
+ 
+ Accepts a Pager, Calendar event types, start and end times and fields to sort by.
+ 
+ For example, if you wish to sort on an Event property such as "colour" or "location", we
+ can do so by specifying it for the `sortBy` String property. All results will then be sorted
+ on it in either ascending or descending order dictated by the `order` property.
+ 
+ By default, when set to nil, the `createdAt` property is the property by which results are sorted on in ascending order.
+ */
 class CalendarEventQuery: NSObject {
     var pager: Pager?
     var sortBy: String?
@@ -61,9 +76,15 @@ class CalendarEventQuery: NSObject {
         if let order = order {
             params.append("order=\(order == .ascending ? "asc" : "desc")")
         }
+        if let startTime = startTime {
+            params.append("startTime=\(startTime)")
+        }
+        if let endTime = endTime {
+            params.append("endTime=\(endTime)")
+        }
         
         if params.count > 0 {
-            joinedParams = "?\(params.joined(separator: "&"))"
+            joinedParams = "\(params.joined(separator: "&"))"
         }
         return joinedParams
     }
@@ -76,6 +97,7 @@ enum CalendarEventMomentRequest: Requestable {
     case addEvent(moment: Moment, jwtToken: String, event: CalendarEvent, completion: (CalendarEvent?, NSError?) -> Void)
     case updateEvent(moment: Moment, jwtToken: String, event: CalendarEvent, completion: (CalendarEvent?, NSError?) -> Void)
     case deleteEvent(moment: Moment, jwtToken: String, eventId: String, completion: (NSError?) -> Void)
+    case updateInviteeStatusForEvent(moment: Moment, jwtToken: String, event: CalendarEvent, status: CalendarEventUserStatus, inviteeEmail: String, completion: (CalendarEvent?, NSError?) -> Void)
     
     var requestType: FlybitsRequestType {
         return .custom
@@ -86,10 +108,10 @@ enum CalendarEventMomentRequest: Requestable {
         case .getEvent(let moment, _, let eventId, _):
             return "\(moment.launchURL)\(CalendarMoment.APIConstants.eventsEndpoint)/\(eventId)"
         case .getEvents(let moment, _, let query, _):
-            return "\(moment.launchURL)\(CalendarMoment.APIConstants.eventsEndpoint)\(((query != nil) ? query!.toParams() : ""))"
+            return "\(moment.launchURL)\(CalendarMoment.APIConstants.eventsEndpoint)\((query != nil) ? "?\(query!.toParams())" : "")"
         case .addEvent(let moment, _, _, _):
             return "\(moment.launchURL)\(CalendarMoment.APIConstants.eventsEndpoint)"
-        case .updateEvent(let moment, _, let event, _):
+        case .updateEvent(let moment, _, let event, _),.updateInviteeStatusForEvent(let moment, _, let event, _, _, _):
             return "\(moment.launchURL)\(CalendarMoment.APIConstants.eventsEndpoint)/\(event.identifier!)"
         case .deleteEvent(let moment, _, let eventId, _):
             return "\(moment.launchURL)\(CalendarMoment.APIConstants.eventsEndpoint)/\(eventId)"
@@ -104,7 +126,7 @@ enum CalendarEventMomentRequest: Requestable {
             return .GET
         case .addEvent(_, _, _, _):
             return .POST
-        case .updateEvent(_, _, _, _):
+        case .updateEvent(_, _, _, _), .updateInviteeStatusForEvent(_, _, _, _, _, _):
             return .PUT
         case .deleteEvent(_, _, _, _):
             return .DELETE
@@ -117,31 +139,14 @@ enum CalendarEventMomentRequest: Requestable {
     
     var headers: [String: String] {
         switch self {
-        case .getEvent(_, let jwtToken, _, _):
-            return ["Accept": "application/json", "Content-Type": "application/json", "X-Authorization": jwtToken]
-        case .getEvents(_, let jwtToken, _, _):
-            return ["Accept": "application/json", "Content-Type": "application/json", "X-Authorization": jwtToken]
-        case .addEvent(_, let jwtToken, _, _):
-            return ["Accept": "application/json", "Content-Type": "application/json", "X-Authorization": jwtToken]
-        case .updateEvent(_, let jwtToken, _, _):
-            return ["Accept": "application/json", "Content-Type": "application/json", "X-Authorization": jwtToken]
-        case .deleteEvent(_, let jwtToken, _, _):
+        case .getEvent(_, let jwtToken, _, _), .getEvents(_, let jwtToken, _, _), .addEvent(_, let jwtToken, _, _), .updateEvent(_, let jwtToken, _, _), .deleteEvent(_, let jwtToken, _, _), .updateInviteeStatusForEvent(_, let jwtToken, _, _, _, _):
             return ["Accept": "application/json", "Content-Type": "application/json", "X-Authorization": jwtToken]
         }
     }
     
     var parameters: [String: AnyObject]? {
         switch self {
-        case .addEvent(_, _, let event, _):
-            var dict: [String: AnyObject]
-            do {
-                dict = try event.toDictionary()
-            } catch {
-                print(error.localizedDescription)
-                dict = [:]
-            }
-            return dict
-        case .updateEvent(_, _, let event, _):
+        case .addEvent(_, _, let event, _), .updateEvent(_, _, let event, _), .updateInviteeStatusForEvent(_, _, let event, _, _, _):
             var dict: [String: AnyObject]
             do {
                 dict = try event.toDictionary()
@@ -173,12 +178,12 @@ enum CalendarEventMomentRequest: Requestable {
             return FlybitsRequest(urlRequest).response { (request, response, eventData: CalendarEvent?, error) -> Void in
                 completion(eventData, error)
             }
-        case .updateEvent(_, _, _, let completion):
+        case .updateEvent(_, _, _, let completion), .updateInviteeStatusForEvent(_, _, _, _, _, let completion):
             return FlybitsRequest(urlRequest).response { (request, response, eventData: CalendarEvent?, error) -> Void in
                 completion(eventData, error)
             }
         case .deleteEvent(_, _, _, let completion):
-            return FlybitsRequest(urlRequest).response { (request, response, eventData: CalendarEvent?, error) -> Void in
+            return FlybitsRequest(urlRequest).set(httpSuccessStatusCode: 204).response { (request, response, eventData: CalendarEvent?, error) -> Void in
                 completion(error)
             }
         }
@@ -227,8 +232,12 @@ class CalendarEvent: NSObject, ResponseObjectSerializable, DictionaryConvertible
     var colour: String?
     var eventType: CalendarEventType? = .publicEvent
     
-    required init?(response: HTTPURLResponse, representation: AnyObject) {
+    override required init() {
         super.init()
+    }
+    
+    convenience required init?(response: HTTPURLResponse, representation: AnyObject) {
+        self.init()
         
         guard let representation = representation as? [String: Any] else {
             return nil

@@ -1,9 +1,13 @@
 //
-//  CalendarMoment.swift
-//  Flybits
+// CalendarEventConstants.swift
+// Copyright (c) :YEAR: Flybits (http://flybits.com)
 //
-//  Created by Alex on 5/18/17.
-//  Copyright © 2017 Flybits. All rights reserved.
+// Permission to use this codebase and all related and dependent interfaces
+// are granted as bound by the licensing agreement between Flybits and
+// :COMPANY_NAME: effective :EFFECTIVE_DATE:.
+//
+// Flybits Framework version :VERSION:
+// Built: :BUILD_DATE:
 //
 
 import Foundation
@@ -13,7 +17,7 @@ class CalendarMoment: NSObject {
     
     struct APIConstants {
         static let eventsEndpoint            = "/events"
-        static let locationsEndpoint         = APIConstants.eventsEndpoint + "/locations"
+        static let locationsEndpoint         = "/locations"
         static let calendarAttendeesEndpoint = "/users"
         
         struct Kernel {
